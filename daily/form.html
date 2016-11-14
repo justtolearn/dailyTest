@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+  /*      window.onload = function(){
+            var oform = document.getElementById("form1");
+//            alert(oform.text1.value);
+//            alert(oform.sex[0].value);
+            oform.sex[0].onchange = function(){
+                alert(this.value);
+            }
+        }*/
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oInp = document.getElementsByTagName("input")[0];
+            oInp.focus();
+            var arr = [];
+            addClass(oDiv,"div1");
+            function addClass(obj,addclass1){
+                if( obj.className == ""){
+                    obj.className =addclass1;
+                }else{
+                   var arr = obj.className.split(" ");
+                   var index = arrIndex(arr,addclass1);
+                    //如果index存在，说明存在要添加的className;
+                    if(index == -1){
+                       obj.className += ' '+ addclass1;
+                    }
+                }
+
+            }
+            function arrIndex(arr,a1){
+                for(i=0;i<arr.length;i++){
+                    if(arr[i] == a1){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+            function removeClass(obj,className){
+                var arr = obj.className.split(" ");
+                var index = arrIndex(arr,className)
+//                        alert(index);
+                if(index !== -1 ){
+                    arr.splice(index,1);
+                    obj.className = arr.join(" ");
+
+                }
+            }
+            removeClass(oDiv2,"div1")
+
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" placeholder="请输入一些内容"/>
+<div class="div div2"  id="div1" style="width:100px;height:100px;background:red;">
+</div>
+<div class="div1 div2 div4"   id="div2" style="width:100px;height:100px;background:red;"></div>
+</body>
+</html>

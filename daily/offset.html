@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            height: 200px;
+            background: black;
+            padding: 10px;
+        }
+        .div2{
+            height:150px;
+            background: red;
+            padding: 10px;
+            position: relative;
+
+        }
+        .div3{
+            height: 100px;
+            background:blue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var adiv = document.getElementsByTagName("div");
+            var s = adiv[2].offsetTop;
+            var itop =0;
+            var divobj = adiv[2];
+            while( divobj){
+                itop += divobj.offsetLeft;
+                divobj = divobj.offsetParent;
+                alert(divobj+":"+itop);
+
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <div class="div3">
+        </div>
+    </div>
+</div>
+</body>
+</html>

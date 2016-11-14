@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/myjslib.js"></script>
+    <script>
+        window.onload = function(){
+         var str="";
+        var len = 20;
+         var num=0;
+            var timer = null;
+        for(var i=0;i<len;i++){
+            str += '<div style="width:50px; height:50px;background:red;position: absolute;top: 10px;left: '+i*60+'px;"></div>';
+        }
+        document.body.innerHTML=str;
+        var adiv = document.getElementsByTagName("div");
+        document.onclick = function a(){
+                clearInterval(timer);
+
+                timer = setInterval(function(){
+                    if(num<len){
+                        doMove(adiv[num],"top",10,500);
+                        num++;
+                        if(num==len) {
+                            clearInterval(timer);
+                            num = num+len-1;
+                        }
+                    }else{
+                        doMove(adiv[num-len],"top",10,50);
+                        if(num==len) {
+                            clearInterval(timer);
+                            num=1;
+                        }
+                        num--;
+
+                    }
+            },100)
+            }
+            /*document.onclick = function b(){
+                clearInterval(timer);
+
+                    timer = setInterval(function(){
+                        if(num==len){
+                            doMove(adiv[num],"top",10,50);
+
+                        }
+                        num--;
+                        doMove(adiv[num],"top",10,50);
+
+                        if(num==0){
+                            clearInterval(timer);
+                        }
+
+                },100)
+            }*/
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

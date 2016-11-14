@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ 
+  <title>Document</title>
+ <style>
+ #div1{
+ width:200px;
+ height:200px;
+ background:red;
+ filter:alpha(opacity:30);
+ opacity:0.3; 
+ }
+ </style>
+ <script>
+  window.onload = function(){
+   var oDiv =document.getElementById("div1");
+   oDiv.onmouseover = function(){
+    startChange(100);
+   }
+   oDiv.onmouseout = function(){
+    startChange(30);
+	//alert(alpha);
+   }
+   
+  }
+  
+  var alpha = 30;
+  var timer = null;
+  function startChange(target){
+   var oDiv = document.getElementById("div1");
+   
+   clearInterval(timer);
+   timer = setInterval(function(){
+	   var speed = 0;
+	   if(alpha < target){
+	    speed = 10 ;
+	
+	   }else{
+	    speed=-10;
+		
+	   }
+	   if(alpha == target){
+	    clearInterval(timer);
+	   }else{
+			alpha += speed;
+		   oDiv.style.filter = 'alpha(opacity:'+alpha+')';
+			oDiv.style.opacity = alpha/100;	 
+	   } 
+   },30)
+  }
+ </script>
+ 
+ </head>
+
+ <body>
+  <div id="div1"></div>
+ </body>
+</html>
