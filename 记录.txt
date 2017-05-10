@@ -1,0 +1,8 @@
+第一天：
+添加元素流程：
+	首先获取input输入的值，存入新的列表对象中（new_task）,然后将该列表对象添加到task_list数组中，使用store.js中的store.set()方法将task_list 存储，
+添加成功后，遍历task_list数组，获取存储的值，append()方法添加到div[class="task-list"]中，函数第一次加载时，要首先初始化加载，遍历数组并添加。
+问题：1：task_list'后多了个空格，导致每次刷新都会重置数据；base.js 24行
+	2.：上下横杠问题，html中task-list是，写成$("task_list")导致无			法获取对象.
+
+

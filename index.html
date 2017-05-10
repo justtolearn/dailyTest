@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <title>todo应用</title>
+    <link href="css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/jquery.datetimepicker.min.css"/ >
+    <link rel="stylesheet" href="css/base.css"/>
+</head>
+<body>
+    <div class="info">
+        <sapn class="msg_content"></sapn>
+        <span class="msg_close">知道了</button>
+    </div>
+    <h2>我的 Todo</h2>
+    <div class="container"><!-- 总容器开始-->
+        <form class="add-task">
+            <input name="content" type="text" placeholder="egg.晚上记得吃饭" autocomplete="off"/>
+            <button type="submit">新建事项</button>
+        </form>
+        <div class="task-list"><!-- 清单列表开始-->
+
+
+        </div><!-- 清单列表结束-->
+        <div class="hide-btn"></div>
+        <div class="task-detail"></div>
+    </div><!-- 总容器结束-->
+    <video src="lib/gogogo.mp3" class="alerter"></video>
+<script src="lib/jquery.js"></script>
+<script src="lib/store.js"></script>
+<script src="lib/jquery.datetimepicker.full.min.js"></script>
+<script src="js/base.js"></script>
+</body>
+</html>

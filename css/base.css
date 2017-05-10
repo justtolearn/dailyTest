@@ -1,0 +1,194 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    -ms-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s;
+    outline: 0;
+}
+body{
+    background: rgba(66, 155, 135, 0.6);
+    color: #fff;
+}
+.info {
+    display: none;
+    text-align: center;
+    background: #11b862;
+    padding: 10px 0;
+    color: #fff;
+}
+.msg_close {
+    cursor: pointer;
+    padding: 6px;
+}
+.msg_close:hover {
+    background: #12a54b;
+    border-radius: 4px;
+}
+.container{
+    max-width: 700px;
+    margin:0 auto;
+    position:relative;
+    padding:0 10px;
+}
+h2{
+    text-align: center;
+}
+.task-list{
+    margin:10px 0;
+    height:100%;
+    background: #ccc9c9;
+}
+button,input{
+    padding: 10px;
+}
+textarea,
+input[type=text],input[type=date]{
+    display: block;
+    width:100%;
+    border-radius: 3px;
+    background: #f1eded;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+}
+textarea,button,
+input[type=text],input[type=date]{
+    border:0;
+}
+textarea{
+    min-height: 100px;
+}
+textarea:hover,
+textarea:focus,
+input[type=text]:hover,
+input[type=text]:focus,
+input[type=date]:hover,
+input[type=date]:focus{
+    background: #fff;
+}
+button{
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+}
+.add-task input[type=text]{
+    float: left;
+    width:69%;
+    margin-right:1% ;
+}
+.confirm,
+.add-task [type=submit]{
+    width:30%;
+    color: #fff;
+    font-family: 'Microsoft YaHei';
+    background: #1ca98f;
+    border-radius: 2px;
+}
+.cancel {
+    background: #ce4949;
+    color: #fff;
+    width: 30%;
+    margin-left: 2%;
+    border-radius: 2px;
+}
+.add-task [type=submit]:hover{
+    background: #5ccc9d;
+}
+.task-item{
+    height: 38px;
+    color:#333;
+    margin-bottom: 4px;
+    padding-right: 10px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px 2px rgba(36, 121, 130, 0.4);
+    cursor:pointer;
+    background: #fff;
+}
+.completed {
+    background: #d1dfdc;
+}
+.task-item.completed:after {
+    content: '';
+    display: block;
+    width: 96%;
+    height: 1px;
+    float: right;
+    background: #9da3a5;
+    position: relative;
+    top: -21px;
+
+}
+.task-item span {
+    line-height: 38px;
+    padding: 0 10px;
+}
+.task-item input[type=checkbox] {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+.task-item:hover{
+    background: #ddd;
+}
+.task-detail{
+    position:absolute;
+    right: 10px;
+    top: 40px;
+    padding: 10px 10px 0 10px;
+    width: 50% ;
+    color:#333;
+    display: none;
+    z-index: 10;
+    border-radius: 4px;
+    background: #e7e1e1;
+}
+.hide-btn{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    display: none;
+}
+.task-detail div,
+.task-detail input {
+    margin-bottom: 10px;
+}
+.task-detail .content{
+    padding:10px;
+    height: 40px;
+    font-weight: 900;
+    border: 1px solid #c6c8ca;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #e0d8d8;
+}
+.task-detail .content:hover {
+    background: #999;
+}
+.task-detail button{
+    background: #e78686;
+    border-radius: 2px;
+    margin-left: 40%;
+
+}
+.action{
+    float:right;
+    color: #888;
+    font-size:16px;
+    cursor: pointer;
+}
+.action:hover{
+    color:#333;
+    background: #f1f1f1;
+}
+.alerter {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
