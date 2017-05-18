@@ -1,4 +1,4 @@
-## jquery应用 （页面展示：https://zhaoteee.github.io/jQuery-TODO-list/
+## jquery应用 （页面<a href="https://zhaoteee.github.io/jQuery-TODO-list/">demo</a>展示：https://zhaoteee.github.io/jQuery-TODO-list/
 ### 功能描述
 1. 新建事项与删除，
 2. 添加详情与截止时间，并有到时提醒功能
