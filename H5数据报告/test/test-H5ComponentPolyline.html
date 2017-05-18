@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+<!--   // 
+  // <script src="../lib/jquery.fullpage.js"></script> -->
+  <script src="../js/lib/jquery.js"></script>
+  <script src="../js/H5ComponentBase.js"></script>
+  <script src="../js/H5ComponentPolyline.js"></script>
+  <link rel="stylesheet" href="../css/H5ComponentPolyline.css" />
+  <link rel="stylesheet" href="../css/H5ComponentBase.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-size: 12px;
+    }
+    .iphone {
+      width: 340px;
+      height: 540px;
+      background-color: #fff;
+      position: absolute;;
+      left: 50%;
+      top: 50%;
+      margin: -270px 0 0 -170px;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="iphone"></div>
+  <script>
+  var cfg = {
+    type: 'polyline',
+    width: 630,
+    height: 600,
+    center: true,
+    data: [
+      ['javascript', .4, '#ff7676'],
+      ['html/css', .3],
+      ['css3', .2],
+      ['jQuery', .35],
+      ['vue', .4]
+    ],
+    css: {
+      top: 150,
+      opacity: 0
+    },
+    animateIn: {opacity: 1},
+    animateOut: {opacity: 0} 
+  }
+  var h5 = new H5ComponentPolyline( 'myBar', cfg );
+  $('.iphone').append(h5);
+
+  var loaded = true;
+    $('body').click(function() {
+      loaded = !loaded;
+      $('.h5_component').trigger(loaded ? 'onLeave': 'onLoad');
+  })
+
+  </script>
+</body>
+</html>

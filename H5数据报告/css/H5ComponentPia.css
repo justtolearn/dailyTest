@@ -1,0 +1,15 @@
+/**柱图组件样式*/
+.h5_component_pia {}
+.h5_component_pia canvas {
+  position: absolute;
+  left: 0;
+  top: 0;/*用canvas做动画，会进行分层，要用到 z-index*/
+  width: 100%;
+  height: 100%;
+}
+.h5_component_pia .text {
+  position: absolute;
+  text-align: center;
+  z-index: 88;
+  transition: all 1s;
+}

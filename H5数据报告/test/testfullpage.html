@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>活动页fullpage测试</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .component {
+      width: 50%;
+      height: 50%;
+      margin-bottom: 50px;
+      background: #eee;
+      
+    }
+  </style>
+  <script src="../js/lib/jquery.js"></script>
+  <script src="../js/lib/jquery.fullPage.js"></script>
+  <script src="../js/lib/jquery-ui.min.js"></script>
+  <script>
+    $(function () {
+      $('#h5').fullpage({
+        'sectionsColor': ['#254875','#00ff00','#254587','#695684'],
+        onLeave: function (index, nextIndex,  direction) {
+          $('#h5').find('.page').eq(index-1).trigger('onLeave');
+          $(this).find('.component').trigger('onLeave');
+        },
+        afterLoad: function (anchorLink, index) {
+          $('#h5').find('.page').eq(index-1).trigger('onLoad');
+          $(this).find('.component').trigger('onLoad');
+        }
+      });
+
+      $('.page').on('onLeave', function () {
+        console.log( $(this).attr('id'),'==>','onLeave');
+      })
+      $('.page').on('onLoad', function () {
+        console.log( $(this).attr('id'),'==>','onLoad');
+      })
+      $('.component').on('onLoad', function () {
+        $(this).fadeIn();
+        return false;
+      })
+      $('.component').on('onLeave', function () {
+        $(this).fadeOut();
+        return false;
+      })
+    })
+  </script>
+</head>
+<body>
+  <!--  -->
+  <div id="h5">
+    <div class="page section" id='page-1'>
+      <div class="component log">log</div>
+      <div class="component slogan">slogan</div>
+    </div>
+    <div class="page section" id='page-2'>
+      <div class="component des">des</div>
+    </div>
+    <div class="page section" id='page-3'>
+      <div class="component bar">柱状图</div>
+    </div>
+  </div>
+
+</body>
+</html>

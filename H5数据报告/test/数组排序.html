@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组排序</title>
+  <script>
+  var arrsort = {
+    /*冒泡排序*/
+    bubbleSort: function (arr) {
+      var len = arr.length;
+      for(var j=0; j < len; j++) {
+        for(var i=j; i<len; i++) {
+          if(arr[j]>arr[i]){
+            var temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      return arr;
+   },
+   /*选择排序:
+      每次选择一个假设为最小的，
+      遍历数组剩下的，并和假设值比较如果还有更小的述，更改记录的min和index
+      index改变说明有比假设值更小的，交换两个值，可以将第一arr[0]换为最小值
+      然后下一次循环
+   */
+   selectSort: function(arr) {
+      var len = arr.length;
+      for(var i = 0; i<len; i++) {
+        var min = arr[i];
+        var index = i;
+        for(var j = i+1; j<len; j++) {
+          if(arr[j] < min) {
+            min = arr[j];
+            index = j;
+          }
+        }
+        if (index != i) {
+          var temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+        }
+      }
+      return arr;
+   },
+   // 回调
+   quickSort: function quickSort(arr) {
+    var len = arr.length;
+    if(len<=1) {
+      return arr;
+    } else {
+      var smaller = [],
+          bigger = [],
+          base = [arr[0]];
+      for (var i = 1; i < len; i++) {
+        if(arr[i]<=base[0]) {
+          smaller.push(arr[i]);
+        } else {
+          bigger.push(arr[i]);
+        }
+      }
+      return quickSort(smaller).concat(base.concat(quickSort(bigger)));
+    }
+   }
+
+  }
+  var t1 = new Date().getTime();
+  var arr = [7,10,9,8,7,11,6,5,7,3];
+  var result = arrsort.quickSort(arr);
+  console.log(result);
+  var t2 = new Date().getTime();
+  console.log(t2-t1+'ms');
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
