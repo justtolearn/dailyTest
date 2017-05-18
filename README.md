@@ -5,7 +5,7 @@
 3. store.js进行localStorage存取信息
 4. 自定义弹出框
 ***
-### 小米首页 （<a href="https://zhaoteee.github.io/jQuery-TODO-list/%E5%B0%8F%E7%B1%B3/">页面展示</a>
+### 小米首页 （<a href="https://zhaoteee.github.io/jQuery-TODO-list/%E5%B0%8F%E7%B1%B3/">页面展示</a>)
 
 1. 对小米首页的布局与色彩一直感觉很好，最近有机会便做了个
 2. 省略了中间一部分结构相同的section，做出整体布局。
